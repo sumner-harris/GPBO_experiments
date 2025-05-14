@@ -138,7 +138,7 @@ def step_GP(
     # 6) Return
     return candidates, mean, var, acq_vals
 
-def evaluate_in_batches(acqf, X, batch_size=10_000):
+def evaluate_in_batches(acqf, X, batch_size=1000):
     all_vals = []
     with torch.no_grad():
         for i in range(0, X.size(0), batch_size):
